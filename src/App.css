@@ -4,19 +4,19 @@
   width: 30%;
 }
 
-.ais-Hits-list{
+.ais-Hits-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.ais-Pagination-list{
+.ais-Pagination-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.ais-Pagination-link{
+.ais-Pagination-link {
   margin: 0 5px;
   color: blue;
 }
@@ -27,15 +27,15 @@
   justify-content: center;
 }
 
-.ais-RefinementList-item{
+.ais-RefinementList-item {
   margin: 5px;
 }
 
-.ais-RefinementList-checkbox{
+.ais-RefinementList-checkbox {
   margin-right: 5px;
 }
 
-.ais-RefinementList-count{
+.ais-RefinementList-count {
   color: blue;
   font-weight: 700;
 }
