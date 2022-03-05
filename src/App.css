@@ -9,3 +9,33 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.ais-Pagination-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ais-Pagination-link{
+  margin: 0 5px;
+  color: blue;
+}
+
+.ais-RefinementList-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ais-RefinementList-item{
+  margin: 5px;
+}
+
+.ais-RefinementList-checkbox{
+  margin-right: 5px;
+}
+
+.ais-RefinementList-count{
+  color: blue;
+  font-weight: 700;
+}

@@ -8,7 +8,7 @@ export function Hit(props){
         <div>
           <h1 className="text-lg font-bold">{hit.title}</h1>
         </div>
-        <div className="flex flex-wrap space-x-4">
+        <div className="flex flex-wrap space-x-4 truncate">
           {
             hit.sources.map((item, index) => {
               return <a href={item} key={index}>Link {index}</a>
