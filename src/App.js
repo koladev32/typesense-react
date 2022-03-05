@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import TypesenseInstantsearchAdapter from 'typesense-instantsearch-adapter';
 import { InstantSearch } from 'react-instantsearch-dom';
 import { SearchBox } from 'react-instantsearch-dom';
 import { Hits } from 'react-instantsearch-dom';
+import { Hit } from './components/Card';
+import CustomSearchBox from './components/SearchBox';
+import { RefinementList } from 'react-instantsearch-dom';
 
 const typesenseInstanrSearchAdapter = new TypesenseInstantsearchAdapter({
   server: {
@@ -21,42 +23,22 @@ const typesenseInstanrSearchAdapter = new TypesenseInstantsearchAdapter({
   },
 })
 
-export function Hit({ hit }){
-  return (
-    <div>
-      <div>
-        <h1>{hit.title}</h1>
-      </div>
-      <div>
-        <h1>{hit.sources}</h1>
-      </div>
-      <div>
-        <h1>{hit.episodes}</h1>
-      </div>
-      <div>
-        <h1>
-          {
-            hit.tags.map(tag => {
-              return <div style={{ color: 'red'}}>{tag}</div>
-            })
-          }
-        </h1>
-      </div>
-    </div>
-  )
-}
-
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <InstantSearch indexName='animes' searchClient={typesenseInstanrSearchAdapter.searchClient}>
-        <div>
-          <div>
-            Main Content
+        <div className="flex flex-row">
+        <RefinementList className="mt-8" attribute="tags" />
+        <div className='flex flex-col space-y-3 w-3/4'>
+          <div className='text-center text-2xl font-bold  text-blue-700'>
+            Search for animes here
           </div>
-          <SearchBox />
+          <div className='self-center w-1/4'>
+            <CustomSearchBox />
+          </div>
           <Hits hitComponent={Hit} />
+        </div>
         </div>
       </InstantSearch>
     </div>
